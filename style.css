@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    background-color: #36393f; /* Dark gray */
+    color: #ffffff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #2f3136; /* Slightly darker gray for header */
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+header h1 {
+    color: #ff9900; /* Orange for the main title */
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #40444b; /* Medium dark gray for content background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.chart-container {
+    width: 100%;
+    background-color: #2f3136; /* Darker background for the chart area */
+    padding: 20px;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensure padding doesn't expand container size */
+}
+
+/* Styling for Chart.js tooltips and legend if needed */
+.chartjs-tooltip {
+    background-color: #2f3136 !important;
+    border: 1px solid #ff9900 !important;
+}
+
+.chartjs-legend-item-text {
+    color: #ffffff !important;
+}
