@@ -1,0 +1,196 @@
+/* Global Styles */
+body {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+  font-family: Arial, sans-serif; /* Common sans-serif font */
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding: 20px;
+  max-width: 1200px; /* Max width for the dashboard */
+  margin: auto; /* Center the dashboard */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+}
+
+.title-section {
+  display: flex; /* For icon and text alignment */
+  align-items: center; /* Vertically center icon with title block */
+}
+
+.title-section > div { /* Text block for title and subtitle */
+  margin-left: 10px; /* If icon is present, this gives space */
+}
+
+.title-section h1 {
+  font-size: 1.8em;
+  margin: 0;
+  display: flex; /* To align icon with text if icon is part of h1 */
+  align-items: center;
+}
+
+/* Actual icon should be an img or SVG. This is a placeholder. */
+.title-section h1::before {
+  content: "⚙️"; /* Placeholder icon */
+  font-size: 0.9em; /* Adjust icon size relative to h1 */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.title-section h2 {
+  font-size: 0.9em;
+  color: #aaaaaa;
+  margin: 5px 0 0 0; /* Space below h1, no left margin needed if text is block */
+  font-weight: normal;
+}
+
+.user-section p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 5px; /* Align baseline a bit better with title */
+}
+
+/* Further component styles will be added below */
+
+/* Tabs Styles */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border-bottom: 1px solid #333; /* Separator for tabs */
+  margin-bottom: 20px; /* Space below tabs */
+}
+
+nav li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent; /* For active indicator */
+  margin-right: 10px; /* Space between tabs */
+  transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+nav li:hover {
+  background-color: #2a2a2a; /* Subtle hover effect */
+}
+
+nav li.active {
+  border-bottom: 3px solid #007bff; /* Active tab indicator color (e.g., blue) */
+  color: #007bff; /* Active tab text color */
+  font-weight: bold;
+}
+
+/* Summary Card Styles */
+.summary-cards-container { /* This class should be added to the div wrapping SummaryCards in App.js */
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  gap: 20px; /* Spacing between cards */
+}
+
+.summary-card { /* This class should be added to the root div in SummaryCard.js */
+  background-color: #1e1e1e; /* Slightly lighter than body background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  text-align: center;
+  flex: 1; /* Distribute space equally among cards */
+  min-width: 200px; /* Minimum width for a card */
+}
+
+.summary-card h2 { /* Metric value */
+  font-size: 2.5em; /* Large text */
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #007bff; /* Example color for metric - can be changed */
+}
+
+.summary-card p { /* Metric title */
+  font-size: 0.9em;
+  color: #bbbbbb; /* Muted color for title */
+  margin: 0;
+}
+
+/* SearchBar Styles */
+.search-bar-container { /* This class should be added to the div in SearchBar.js */
+  margin: 20px 0; /* Space around the search bar */
+}
+
+.search-bar-container input[type="text"] {
+  width: 100%; /* Full width */
+  padding: 12px 15px;
+  background-color: #1e1e1e; /* Dark background for input */
+  color: #ffffff; /* Light text */
+  border: 1px solid #333; /* Subtle border */
+  border-radius: 6px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-size: 1em;
+}
+
+.search-bar-container input[type="text"]::placeholder {
+  color: #888888; /* Muted placeholder text color */
+}
+
+/* StrategyTable Styles */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove double borders */
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for the table */
+  border-radius: 6px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures border-radius is applied to child elements like th */
+}
+
+th, td {
+  padding: 12px 15px; /* Cell padding */
+  border-bottom: 1px solid #2a2a2a; /* Horizontal lines for separation */
+  text-align: left;
+}
+
+/* Remove border from the last row's cells to avoid double border with table radius */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+th {
+  background-color: #1a1a1a; /* Darker background for headers */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase; /* Uppercase headers */
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #242424;
+}
+
+tbody tr:hover {
+  background-color: #2f2f2f; /* Hover effect for rows */
+}
+
+/* ActionLink Styles */
+.action-link { /* Targeting ActionLink's anchor tag */
+  color: #0095ff; /* Brighter blue for links in dark theme */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+  color: #33abff;
+}
