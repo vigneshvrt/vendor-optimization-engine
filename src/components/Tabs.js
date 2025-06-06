@@ -1,13 +1,20 @@
 import React from 'react';
 
-const Tabs = () => {
+const Tabs = ({ activeTab, onTabClick }) => {
+  const tabNames = ['Dashboard', 'Performance Reports', 'Configuration', 'Audit Logs'];
+
   return (
     <nav>
       <ul>
-        <li className="active">Dashboard</li> {/* Mark Dashboard as active */}
-        <li>Performance Reports</li>
-        <li>Configuration</li>
-        <li>Audit Logs</li>
+        {tabNames.map(tabName => (
+          <li
+            key={tabName}
+            className={activeTab === tabName ? 'active' : ''}
+            onClick={() => onTabClick(tabName)}
+          >
+            {tabName}
+          </li>
+        ))}
       </ul>
     </nav>
   );

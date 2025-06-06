@@ -1,10 +1,19 @@
 import React from 'react';
 
-// It's good practice to add a class if more specific styling is needed later,
-// but for now, the 'td a' selector in style.css will style it.
-const ActionLink = ({ text }) => {
+// Accept onClick prop
+const ActionLink = ({ text, onClick }) => {
+  const handleClick = (e) => {
+    e.preventDefault(); // Prevent default anchor navigation
+    if (onClick) {
+      onClick(); // Call the passed onClick handler
+    }
+  };
+
   return (
-    <a href="#" className="action-link">{text}</a>
+    // Attach the local handleClick to the anchor's onClick event
+    <a href="#" className="action-link" onClick={handleClick}>
+      {text}
+    </a>
   );
 };
 

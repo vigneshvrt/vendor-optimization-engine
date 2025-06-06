@@ -1,13 +1,8 @@
 import React from 'react';
-import TableRow from './TableRow'; // Assuming TableRow is in the same directory
+import TableRow from './TableRow';
 
-const StrategyTable = () => {
-  const sampleData = [
-    { country: 'IN', currentVendorOrder: 'datazoo → melissa', aiSuggestedOrder: 'melissa → datazoo', costImpact: '–18%', latency: '–320ms' },
-    { country: 'PH', currentVendorOrder: 'enstream → datazoo', aiSuggestedOrder: 'datazoo → enstream', costImpact: '–25%', latency: '–490ms' },
-    { country: 'CA', currentVendorOrder: 'melissa', aiSuggestedOrder: 'melissa', costImpact: '–4%', latency: '—' },
-  ];
-
+// Accept onViewModifyClick prop
+const StrategyTable = ({ data, onViewModifyClick }) => {
   return (
     <table>
       <thead>
@@ -21,8 +16,9 @@ const StrategyTable = () => {
         </tr>
       </thead>
       <tbody>
-        {sampleData.map((row, index) => (
-          <TableRow key={index} rowData={row} />
+        {data.map((row, index) => (
+          // Pass onViewModifyClick to each TableRow
+          <TableRow key={index} rowData={row} onViewModifyClick={onViewModifyClick} />
         ))}
       </tbody>
     </table>

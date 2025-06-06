@@ -194,3 +194,133 @@ tbody tr:hover {
   text-decoration: underline;
   color: #33abff;
 }
+
+/* Button Styles */
+.bottom-button-container { /* Class for the div wrapping the button in App.js */
+  margin-top: 30px;
+  padding-bottom: 20px;
+  text-align: center; /* Ensure this is still here or on the div in App.js */
+}
+
+.cta-button { /* Specific class for this button */
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  font-size: 1em; /* Adjusted for consistency */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Added for better text appearance */
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Conditional Styling for Table Cells */
+.text-green {
+  color: #28a745; /* Green for positive outcomes (e.g., cost savings, latency reduction) */
+  font-weight: bold;
+}
+
+.text-red {
+  color: #dc3545; /* Red for negative outcomes (e.g., cost increase, latency increase) */
+  font-weight: bold;
+}
+
+.text-neutral {
+  /* Default color is already fine, but can be specified if needed */
+  color: #ffffff; /* Or inherit, depending on base text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .summary-cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 15px; /* Adjust gap for vertical layout */
+  }
+
+  .summary-card {
+    min-width: unset; /* Remove min-width if it conflicts with full width */
+    width: 100%; /* Or some other appropriate width like 90% with margin auto */
+    box-sizing: border-box;
+  }
+
+  /* Table responsiveness: make it scrollable */
+  .table-responsive-wrapper {
+    overflow-x: auto; /* Allows table to be scrolled horizontally */
+    margin-bottom: 15px; /* Add some space below the scrollable table */
+  }
+
+  /* Optional: Adjust header text sizes for smaller screens */
+  .title-section h1 {
+    font-size: 1.5em;
+  }
+  .title-section h1::before {
+    font-size: 0.8em;
+  }
+  .title-section h2 {
+    font-size: 0.8em;
+    padding-left: 30px; /* Adjust if icon size changed */
+  }
+
+  /* Optional: Adjust tab padding for smaller screens */
+  nav li {
+    padding: 8px 12px;
+    margin-right: 5px;
+  }
+
+  /* Optional: Adjust search bar for smaller screens */
+  .search-bar-container input[type="text"] {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  /* Optional: Adjust table cell padding for smaller screens */
+  table th, table td {
+    padding: 8px 10px;
+    font-size: 0.9em; /* Slightly smaller font for table content */
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-section {
+    flex-direction: column; /* Stack title/subtitle under icon on very small screens */
+    align-items: flex-start;
+  }
+  .title-section h1::before {
+    margin-bottom: 5px; /* Space between icon and title block */
+  }
+  .title-section > div { /* Text block for title and subtitle */
+    margin-left: 0; /* No margin when icon is above */
+  }
+   .title-section h2 {
+    padding-left: 0; /* No padding needed if icon is not side-by-side */
+    top: 0; /* Reset top adjustment */
+  }
+
+  header {
+    flex-direction: column; /* Stack title section and user section */
+    align-items: flex-start;
+  }
+  .user-section {
+    margin-top: 10px; /* Space when header sections stack */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack tabs vertically */
+  }
+  nav li {
+    margin-right: 0;
+    margin-bottom: 5px; /* Space between stacked tabs */
+    text-align: center;
+  }
+}

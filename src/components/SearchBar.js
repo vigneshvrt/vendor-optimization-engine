@@ -1,10 +1,15 @@
 import React from 'react';
 
-const SearchBar = () => {
+// Accept searchTerm and onSearchChange as props
+const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
-    // Added search-bar-container class here
     <div className="search-bar-container">
-      <input type="text" placeholder="Search by country, account ID, or vendor" />
+      <input
+        type="text"
+        placeholder="Search by country, account ID, or vendor"
+        value={searchTerm} // Controlled input
+        onChange={onSearchChange} // Handle changes
+      />
     </div>
   );
 };
